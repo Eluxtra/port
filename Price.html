@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pricing Plans</title>
+<style>
+  body {
+    margin: 0;
+    padding: 3rem 1.5rem 5rem; /* bottom padding for warning */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f141c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .logo-container {
+    margin-bottom: 2rem;
+    animation: floatLogo 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px #eeedea);
+  }
+
+  .logo-container img {
+    width: 250px;
+    display: block;
+  }
+
+  @keyframes floatLogo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .pricing-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 700px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    background: #1c2431;
+    border: 1px solid #2c3544;
+    border-radius: 12px;
+    padding: 2rem;
+    flex: 1 1 320px;
+    box-shadow: 0 4px 15px rgba(255 255 255 / 0.15);
+    position: relative;
+    animation: floatCard 4s ease-in-out infinite;
+    cursor: default;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 8px 30px rgba(255 255 255 / 0.6);
+    transform: translateY(-10px);
+    animation-play-state: paused;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .icon {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 8px white);
+    user-select: none;
+  }
+
+  h2 {
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: #fff;
+    text-shadow: 0 0 6px white;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+    white-space: pre-line;
+  }
+
+  /* Subtle icon for short term */
+  .icon.short-term::before {
+    content: ""; /* hourglass */
+  }
+  /* Subtle icon for long term */
+  .icon.long-term::before {
+    content: ""; /* money bag */
+  }
+
+  /* Warning message */
+  .warning {
+    font-size: 0.85rem;
+    color: #facc15;
+    text-align: center;
+    max-width: 700px;
+    user-select: none;
+    text-shadow: 0 0 4px #facc15;
+  }
+</style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="IMG/Logo.png" alt="logo" />
+  </div>
+
+  <div class="pricing-container">
+    <div class="card">
+      <div class="icon short-term"></div>
+      <h2>Short Term / One Time</h2>
+      <p>
+        Need to pay every time you want a service,  
+        Minimum $5
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon long-term"></div>
+      <h2>Long Term</h2>
+      <p>
+        One time payment,  
+        Minimum $30
+      </p>
+    </div>
+  </div>
+
+  <div class="warning">
+    ⚠️ Payment is accepted <strong>only via PayPal and Roblox</strong>.
+  </div>
+
+<script>
+  // Add random animation delay to cards for natural float effect
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.animationDelay = (Math.random() * 2).toFixed(2) + 's';
+  });
+</script>
+
+</body>
+</html>

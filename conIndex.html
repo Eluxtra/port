@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eluxtra | Socials</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(270deg, #0f141c, #1e293b, #0f141c);
+      background-size: 600% 600%;
+      color: #d1d5db;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: backgroundShift 20s ease infinite;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .orb {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      animation: floatOrb 10s infinite ease-in-out, orbRotate 20s linear infinite;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    }
+
+    .orb:nth-child(1) { top: 10%; left: 15%; background: rgba(255,255,255,0.15); animation-delay: 0s, 0s; }
+    .orb:nth-child(2) { top: 30%; left: 70%; background: rgba(255,255,255,0.12); animation-delay: 2s, 2s; }
+    .orb:nth-child(3) { top: 60%; left: 25%; background: rgba(255,255,255,0.10); animation-delay: 4s, 4s; }
+    .orb:nth-child(4) { top: 80%; left: 80%; background: rgba(255,255,255,0.08); animation-delay: 6s, 6s; }
+
+    @keyframes floatOrb {
+      0% { transform: translateY(0) scale(1); opacity: 0.2; }
+      50% { transform: translateY(-20px) scale(1.2); opacity: 0.4; }
+      100% { transform: translateY(0) scale(1); opacity: 0.2; }
+    }
+
+    @keyframes orbRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      animation: fadeInCard 2s ease forwards;
+    }
+
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 1rem 0;
+      font-size: 1rem;
+      color: #cbd5e1;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-item img {
+      width: 24px;
+      height: 24px;
+      opacity: 0.9;
+    }
+
+    .contact-item a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .back-button {
+      margin-top: 2rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 9999px;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      color: white;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      animation: floatLogo 3s ease-in-out infinite;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .back-button:hover {
+      background-color: #334155;
+      transform: scale(1.08) rotateX(10deg);
+      box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .back-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      transform: skewX(-25deg);
+      transition: left 0.7s ease;
+      pointer-events: none;
+    }
+
+    .back-button:hover::before {
+      left: 125%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Orbs -->
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+
+  <div class="card">
+    <h2>My Socials</h2>
+
+    <div class="contact-item">
+      <img src="https://img.icons8.com/ios-glyphs/30/ffffff/discord-logo.png" alt="Discord Icon">
+      <span>@eluxtra</span>
+    </div>
+
+    <div class="contact-item">
+      <img src="https://img.icons8.com/ios-glyphs/30/ffffff/twitter.png" alt="Twitter Icon">
+      <a href="https://x.com/EluxtraDev" target="_blank">@EluxtraDev</a>
+    </div>
+
+    <button class="back-button" onclick="location.href='Main.html'">← Back to Home</button>
+  </div>
+
+</body>
+</html>

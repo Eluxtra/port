@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Commission Terms</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #131A26, #0a0a0f);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff;
+    }
+
+    p.subtitle {
+      color: #a0a0a0;
+      margin-bottom: 30px;
+    }
+
+    .terms-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 800px;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      color: #d2d4dc;
+    }
+
+    .terms-box h2 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-top: 30px;
+    }
+
+    .terms-box ul {
+      padding-left: 20px;
+    }
+
+    /* Glowing button container for orbs */
+    .button-container {
+      position: relative;
+      margin-top: 40px;
+      display: inline-block;
+    }
+
+    /* Glowing orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      background: #ffffff;
+      filter: drop-shadow(0 0 8px #ffffff);
+      opacity: 0.7;
+      animation: floatOrb 6s ease-in-out infinite;
+      pointer-events: none; /* Don't interfere with button clicks */
+      mix-blend-mode: screen;
+    }
+    /* Different sizes and positions for orbs */
+    .orb1 {
+      width: 12px;
+      height: 12px;
+      top: -15px;
+      left: 10px;
+      animation-delay: 0s;
+    }
+    .orb2 {
+      width: 8px;
+      height: 8px;
+      top: 5px;
+      left: 130%;
+      animation-delay: 2s;
+    }
+    .orb3 {
+      width: 10px;
+      height: 10px;
+      top: 35px;
+      left: -10px;
+      animation-delay: 4s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0); opacity: 0.7;}
+      50% { transform: translateY(-10px); opacity: 1;}
+    }
+
+    .back-button {
+      position: relative;
+      background: #ffffff;
+      border: 2px solid #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #131A26;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow:
+        0 0 8px #ffffff,
+        0 0 20px #ffffff,
+        0 0 30px #ffffff,
+        inset 0 0 8px #ffffff;
+      transition: box-shadow 0.3s ease, color 0.3s ease;
+      user-select: none;
+      overflow: visible;
+      z-index: 1;
+      animation: glowPulse 2.5s ease-in-out infinite;
+    }
+
+    .back-button:hover {
+      color: #fff;
+      box-shadow:
+        0 0 12px #fff,
+        0 0 25px #fff,
+        0 0 40px #ffffff,
+        inset 0 0 12px #ffffff;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 8px #ffffff,
+          0 0 20px #ffffff,
+          0 0 30px #ffffff,
+          inset 0 0 8px #dad8d4;
+      }
+      50% {
+        box-shadow:
+          0 0 12px #fff,
+          0 0 30px #f1f1f1,
+          0 0 40px #ffffff,
+          inset 0 0 12px #e0e0e0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Terms of Service</h1>
+  <p class="subtitle">Please read these carefully before requesting a commission.</p>
+
+  <div class="terms-box">
+
+  <h2>I. Creative Process</h2>
+  <ul>
+    <li>Kindly refrain from rushing the creative process.</li>
+  </ul>
+
+  <h2>II. Usage & Rights</h2>
+  <ul>
+    <li>Reselling, redistributing, or sublicensing any UI is strictly prohibited.</li>
+    <li>Upon sharing any of my UI on social media, please provide proper credit to <strong>@EluxtraUI</strong>.</li>
+    <li>While crediting on the Roblox game page or in-game is not mandatory, it is greatly appreciated.</li>
+  </ul>
+
+  <h2>III. Revisions & Changes</h2>
+  <ul>
+    <li>Significant revisions during the UI creation process may incur an additional cost, depending on complexity.</li>
+  </ul>
+
+  <h2>IV. Cancellation & Refunds</h2>
+  <ul>
+    <li>If an order is canceled after work has commenced, no refunds will be issued.</li>
+    <li>Any completed work remains the property of the artist.</li>
+    <li>If payment is delayed after work begins, the client will be reported and blacklisted—especially for Discord-issued commissions.</li>
+  </ul>
+
+  <h2>V. Deadlines & Delivery</h2>
+  <ul>
+    <li>Please inform me of specific deadlines in advance.</li>
+    <li>Expedited delivery due to time constraints may incur additional charges depending on urgency.</li>
+  </ul>
+
+  <h2>VI. Payment Policy</h2>
+  <ul>
+    <li>I do not accept intermediaries or middlemen in servers for payment handling.</li>
+    <li>Payments are only accepted through <strong>PayPal</strong> or <strong>Robux</strong>.</li>
+  </ul>
+
+  </div>
+
+  <div class="button-container">
+    <a href="Main.Html" class="back-button">← Back to Home</a>
+    <span class="orb orb1"></span>
+    <span class="orb orb2"></span>
+    <span class="orb orb3"></span>
+  </div>
+
+</body>
+</html>

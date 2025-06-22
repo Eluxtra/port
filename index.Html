@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eluxtra | Portfolio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #0f141c;
+        color: #d1d5db;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        overflow-x: hidden;
+        animation: fadeInBody 2s ease forwards;
+        position: relative;
+      }
+
+      @keyframes fadeInBody {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .orb {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: floatOrb 10s infinite ease-in-out;
+        pointer-events: none;
+      }
+
+      .orb:nth-child(1) {
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+      .orb:nth-child(2) {
+        top: 30%;
+        left: 70%;
+        animation-delay: 2s;
+      }
+      .orb:nth-child(3) {
+        top: 60%;
+        left: 25%;
+        animation-delay: 4s;
+      }
+      .orb:nth-child(4) {
+        top: 80%;
+        left: 80%;
+        animation-delay: 6s;
+      }
+
+      @keyframes floatOrb {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.2;
+        }
+        50% {
+          transform: translateY(-20px) scale(1.2);
+          opacity: 0.4;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.2;
+        }
+      }
+
+      .Logo {
+        width: 90px;
+        margin-bottom: 1.5rem;
+        animation: floatLogo 3s ease-in-out infinite;
+      }
+
+      @keyframes floatLogo {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .About {
+        max-width: 800px;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #cbd5e1;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+
+      .About:nth-of-type(2) {
+        animation-delay: 0.3s;
+      }
+      .About:nth-of-type(3) {
+        animation-delay: 0.6s;
+      }
+      .About:nth-of-type(4) {
+        animation-delay: 0.9s;
+      }
+      .About:nth-of-type(5) {
+        animation-delay: 1.2s;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .gallery {
+        margin-top: 4rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        width: 100%;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 1.8s;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 2px solid #1e293b;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, filter 0.3s;
+        filter: grayscale(10%) brightness(1.1);
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+        filter: none;
+      }
+
+      .buttons {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+        animation-delay: 2.5s;
+      }
+
+      .buttons button {
+        padding: 0.6rem 1.4rem;
+        background-color: #1e293b;
+        color: white;
+        border: 1px solid #334155;
+        border-radius: 9999px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        animation: floatLogo 3s ease-in-out infinite;
+      }
+
+      .buttons button:hover {
+        background-color: #334155;
+        transform: scale(1.05);
+        animation-play-state: paused;
+      }
+
+      @media (max-width: 600px) {
+        .About {
+          font-size: 0.95rem;
+        }
+        button {
+          width: 100%;
+        }
+      }
+
+/* --- Glowing pulse for logo --- */
+.Logo {
+  animation: floatLogo 3s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px white);
+}
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 5px white); }
+  50% { filter: drop-shadow(0 0 15px white); }
+}
+
+/* --- Orb color shift and rotation --- */
+.orb {
+  animation: floatOrb 10s infinite ease-in-out, orbRotate 20s linear infinite;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+@keyframes orbRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Orb color pulse */
+.orb:nth-child(1) {
+  animation-delay: 0s, 0s;
+  background: rgba(255, 255, 255, 0.15);
+}
+.orb:nth-child(2) {
+  animation-delay: 2s, 2s;
+  background: rgba(255, 255, 255, 0.12);
+}
+.orb:nth-child(3) {
+  animation-delay: 4s, 4s;
+  background: rgba(255, 255, 255, 0.10);
+}
+.orb:nth-child(4) {
+  animation-delay: 6s, 6s;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Text glow and shadow --- */
+.About {
+  color: #cbd5e1;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+  transition: text-shadow 0.3s ease;
+}
+.About:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+/* --- Button shine on hover --- */
+.buttons button {
+  position: relative;
+  overflow: hidden;
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.6rem 1.4rem;
+  transition: background 0.3s, transform 0.3s;
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+.buttons button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.buttons button:hover::before {
+  left: 125%;
+}
+
+.buttons button:hover {
+  background-color: #334155;
+  transform: scale(1.08) rotateX(10deg);
+  animation-play-state: paused;
+  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.6);
+}
+
+/* --- Background gradient animation --- */
+body {
+  background: linear-gradient(270deg, #0f141c, #1e293b, #0f141c);
+  background-size: 600% 600%;
+  animation: backgroundShift 20s ease infinite;
+}
+
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Floating Orbs -->
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+
+    <main>
+      <img class="Logo" src="/IMG/Logo.png" alt="Logo" />
+
+      <!-- Headline removed -->
+
+      <p class="About">
+        I’m Eluxtra, a dedicated Graphic Designer with 7 months of professional
+        experience in the Roblox development space. I've been part of the Roblox
+        community since 2017, and since 2020, I’ve actively collaborated with a
+        variety of development teams, helping shape both small and mid-scale
+        projects with high-impact visuals.
+      </p>
+
+      <p class="About">
+        I specialize in 2D design, particularly UI assets and Icon Vectors. I’m
+        confident in my ability to take abstract ideas and transform them into
+        clean, eye-catching visuals that align with a project’s style and vision.
+        Every asset I create is designed with precision, creativity, and purpose.
+      </p>
+
+      <p class="About">
+        I take my work seriously, and I’m always striving to push creative
+        boundaries while delivering consistent, polished results. If you’re
+        looking for someone who can elevate your game’s visual identity, I’m
+        ready to bring your ideas to life.
+      </p>
+
+      <p class="About">
+        Portfolio created by Eluxtra in collaboration with Kacper — bringing ideas
+        to life, together.
+      </p>
+
+      <div class="buttons">
+        <button type="button" onclick="location.href='conIndex.html'">HOME</button>
+        <button type="button" onclick="location.href='show.html'">WORK</button>
+        <button type="button" onclick="location.href='conIndex.html'">SOCIALS</button>
+        <button type="button" onclick="location.href='Price.html'">PRICES</button>
+        <button type="button" onclick="location.href='terms.html'">TERMS</button>
+      </div>
+    </main>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.buttons button');
+
+        buttons.forEach((button) => {
+          // Random delay between 0 and 2 seconds
+          const randomDelay = (Math.random() * 2).toFixed(2) + 's';
+          button.style.animationDelay = randomDelay;
+        });
+      });
+    </script>
+  </body>
+</html>
